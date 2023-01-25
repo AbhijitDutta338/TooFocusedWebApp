@@ -9,7 +9,7 @@ function Fields(props){
                     <Icon>{props.iconName}</Icon>
                 </span>
             </div>
-            <input id={props.idName} type={props.type} name={props.idName} placeholder={props.placeholder} className="form-control bg-white border-left-0 border-md"></input>
+            <input id={props.idName} type={props.type} name={props.idName} placeholder={props.placeholder} onChange={props.onChange} className="form-control bg-white border-left-0 border-md"></input>
         </div>
     );
 }
