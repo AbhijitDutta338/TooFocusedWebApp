@@ -26,7 +26,7 @@ function HomeNavbar(){
                         <a className="nav-link" href="">Classroom</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="">Group</a>
+                        <Link className="nav-link" to="/groups">Groups</Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="">Explore</a>

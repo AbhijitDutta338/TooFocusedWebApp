@@ -5,6 +5,7 @@ import ForgetPass from './Pages/ForgotPass';
 import Home from './Pages/Home';
 import Profile from './Pages/Profile';
 import NotFoundError from './Pages/NotFoundError';
+import Groups from './Pages/Groups';
 import { BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 
 
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/profile" element={<Profile/>}/>
                     <Route path="/404" element={<NotFoundError/>} />
                     <Route path="*" element={<Navigate to ="/404" />}/>
+                    <Route path="/groups" element={<Groups/>}/>
                 </Routes >
             </div>
         </Router>
