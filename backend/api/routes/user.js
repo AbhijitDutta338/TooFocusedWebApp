@@ -22,18 +22,6 @@ router.get('/', (req, res, next) => {
 });
 router.post('/login', (req, res) => {
     const { userName, password } = req.query;
-    // User.findOne({userName: userName}, (err, user) => {
-    //   if (err) {
-    //      res.status(500).json({message: 'Error finding user'});
-    //   }
-    //   if (!user) {
-    //      res.status(404).json({message: 'User not found'});
-    //   }
-    //   if (user.password !== password) {
-    //      res.status(401).json({message: 'Incorrect password'});
-    //   }
-    //   res.json({message: 'Successful login'});
-    // })
     User.findOne({ userName: userName }).exec()
         .then(user => {
             if (!user) {
@@ -43,7 +31,10 @@ router.post('/login', (req, res) => {
                 res.status(401).json({ message: 'Incorrect password' });
             }
             else {
-                res.json({ message: 'Successful login' });
+                res.status(200).json({ 
+                    message: 'Successful login',
+                    user: user
+                });
             }
         }).catch(err => {
             res.status(500).json({ message: 'Error finding user' });
@@ -103,5 +94,18 @@ router.delete('/:id', (req, res, next) => {
         });
     });
 });
+
+router.patch('/update/:Id', (req, res, next)=>{
+    User.findByIdAndUpdate(req.params.Id, req.body)
+    .then(res=>{
+        res.status(200).json({
+            message: "User Updated Successfully!",
+        });
+    }).catch(err=>{
+        res.status(500).json({
+            error: err,
+        });
+    });
+})
 
 module.exports = router;

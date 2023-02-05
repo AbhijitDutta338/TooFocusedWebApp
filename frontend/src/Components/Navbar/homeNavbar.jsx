@@ -34,11 +34,14 @@ function HomeNavbar(){
                 </ul>
                 <div class="dropdown">
                     <Mui.Button variant="text" startIcon={<Mui.Avatar alt="User Img" src={student} />} className="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Riya Sen
+                        {sessionStorage.getItem('Name')}
                     </Mui.Button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <Link class="dropdown-item" to="/profile" >Profile</Link>
-                        <Link class="dropdown-item" to="/login" >Sign Out</Link>
+                        <Link class="dropdown-item" onClick={()=>{
+                            sessionStorage.setItem('userID', "");
+                            sessionStorage.setItem('Name', "");            
+                        }} to="/login" >Sign Out</Link>
                     </div>
                 </div>
             </div>

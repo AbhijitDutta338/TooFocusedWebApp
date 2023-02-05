@@ -20,8 +20,10 @@ function App() {
                     <Route path="/login" element={ <Login /> } />
                     <Route path="/register" element={ <Register /> } />
                     <Route path="/forget-password" element={ <ForgetPass /> } />
-                    <Route path="/home" element={ <Home /> } />
-                    <Route path="/profile" element={<Profile/>}/>
+                    { (sessionStorage.getItem('userID') && sessionStorage.getItem('userID').length>0) &&
+                      <Route path="/home" element={ <Home /> } />}
+                    { (sessionStorage.getItem('userID') && sessionStorage.getItem('userID').length>0) &&
+                      <Route path="/profile" element={<Profile/>}/>}
                     <Route path="/404" element={<NotFoundError/>} />
                     <Route path="*" element={<Navigate to ="/404" />}/>
                     <Route path="/groups" element={<Groups/>}/>

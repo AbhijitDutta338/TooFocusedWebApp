@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Fields from "../Components/Fields";
 import Navbar from '../Components/Navbar/userFormNavbar';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 function Register() {
+    const navigate = useNavigate();
     const [name,setName] = useState(false);
     const [password,setPassword] = useState(false);
     const [email,setEmail] = useState(false);
@@ -82,11 +83,10 @@ function Register() {
             if (confirm === formData.password) {
                 axios.post('http://localhost:8000/users', formData)
                     .then(res => {
-                        sessionStorage.setItem('user', formData.username);                        
+                        navigate('/login');                        
                     })
                     .catch(err => {
                         setError("User name already exists");
-                    
                     });
             }
             else {
