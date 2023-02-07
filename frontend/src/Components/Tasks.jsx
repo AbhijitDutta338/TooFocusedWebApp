@@ -21,7 +21,7 @@ function preventDefault(event) {
 
 export default function Orders() {
     const [rows, setData] = useState([]);
-
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,7 +33,7 @@ export default function Orders() {
     };
 
     fetchData();
-  }, []);
+  }, rows);
   return (
     <React.Fragment>
       <Typography component="h2" variant="h6" color="primary" gutterBottom>
