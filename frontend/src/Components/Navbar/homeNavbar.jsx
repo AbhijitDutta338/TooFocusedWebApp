@@ -20,7 +20,7 @@ function HomeNavbar(){
                         <Link className="nav-link" to="/home">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="">Your Dashboard</a>
+                    <Link className="nav-link" to="/dashboard">Your Dashboard</Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="">Classroom</a>
