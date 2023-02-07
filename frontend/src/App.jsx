@@ -17,17 +17,20 @@ function App() {
             <div>
                 <Routes >
                     <Route exact path="/" element={ <Register /> } />
-                    <Route path="/login" element={ <Login /> } />
-                    <Route path="/register" element={ <Register /> } />
-                    <Route path="/forget-password" element={ <ForgetPass /> } />
+                    <Route exact path="/login" element={ <Login /> } />
+                    <Route exact path="/register" element={ <Register /> } />
+                    <Route exact path="/forget-password" element={ <ForgetPass /> } />
                     { (sessionStorage.getItem('userID') && sessionStorage.getItem('userID').length>0) &&
-                      <Route path="/home" element={ <Home /> } />}
+                      <Route exact path="/home" element={ <Home /> } />}
                     { (sessionStorage.getItem('userID') && sessionStorage.getItem('userID').length>0) &&
-                      <Route path="/profile" element={<Profile/>}/>}
-                    <Route path="/404" element={<NotFoundError/>} />
+                      <Route exact path="/profile" element={<Profile/>}/>}
+                    <Route exact path="/groups" element={<Groups/>}/>
+                    <Route exact path="/groupsPage" element={<GroupsPage/>}/>
+                    <Route exact path="*" element={<NotFoundError/>} />
+                    {/*
+                    <Route exact path="/404" element={<NotFoundError/>} />
                     <Route path="*" element={<Navigate to ="/404" />}/>
-                    <Route path="/groups" element={<Groups/>}/>
-                    <Route path="/groupsPage" element={<GroupsPage/>}/>
+                    */}
                 </Routes >
             </div>
         </Router>
