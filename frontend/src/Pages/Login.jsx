@@ -12,13 +12,16 @@ function Login() {
         e.preventDefault();
         axios.post(`http://localhost:8000/users/login?userName=${username}&password=${password}`)
             .then(res => {
-                sessionStorage.setItem('user', username);
+                sessionStorage.setItem('userID', res.data.user._id);
+                sessionStorage.setItem('Name', res.data.user.name);
+                console.log(res.data.user);
                 navigate('/home');
                 setError("");
             })
             .catch(err => {
                 setError("Please Enter Valid Username and Password");
                 console.log("Failed")
+                console.log(err)
             });
         }
         return (
