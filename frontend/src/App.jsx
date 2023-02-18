@@ -7,6 +7,7 @@ import Profile from './Pages/Profile';
 import NotFoundError from './Pages/NotFoundError';
 import Groups from './Pages/Groups';
 import GroupsPage from './Pages/GroupsPage';
+import Explore from './Pages/Explore';
 import { BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 
 
@@ -26,6 +27,7 @@ function App() {
                     <Route path="*" element={<Navigate to ="/404" />}/>
                     <Route path="/groups" element={<Groups/>}/>
                     <Route path="/groupsPage" element={<GroupsPage/>}/>
+                    <Route path="/explore" element={<Explore/>}/>
                 </Routes >
             </div>
         </Router>

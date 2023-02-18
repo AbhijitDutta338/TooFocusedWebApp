@@ -29,7 +29,7 @@ function HomeNavbar(){
                         <Link className="nav-link" to="/groups">Groups</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="">Explore</a>
+                        <Link className="nav-link" to="/explore">Explore</Link>
                     </li>
                 </ul>
                 <div class="dropdown">
