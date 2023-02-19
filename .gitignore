@@ -5,3 +5,4 @@ node_modules/
 
 #Security files:
 /backend/nodemon.json
+/backend/seeder.js
