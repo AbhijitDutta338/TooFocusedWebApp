@@ -1,0 +1,21 @@
+English
+math
+art
+science
+history
+music
+geography
+P.E (Physical Education)
+drama
+biology
+chemistry
+physics
+I.T (Information Technology)
+foreign languages
+social studies
+technology
+philosophy
+graphic design
+literature
+algebra
+geometry
