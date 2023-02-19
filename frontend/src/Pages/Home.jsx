@@ -7,6 +7,8 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import LiveHelpIcon from '@mui/icons-material/LiveHelp';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import PostAddIcon from '@mui/icons-material/PostAdd';
+import SendIcon from '@mui/icons-material/Send';
+import HomeNavbar from '../Components/Navbar/homeNavbar';
 
 export default function Home(){
     const [qGroup, setQGroup] = React.useState('');
@@ -21,50 +23,10 @@ export default function Home(){
         'Connect Discord',
         'Join Group'
     ];
-    const randomTags=[
-        'psychology', 'history', 'computer science', 'random bullshit', 'adult', 'english', 'politics'
-    ];
+    const randomTags=[ 'psychology', 'history', 'computer science', 'random bullshit', 'adult', 'english', 'politics'];
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light mt-1">
-                <a className="navbar-brand" href="">
-                    <img src="./images/icons8-working-with-a-laptop-32.png" width="20" height="20" className="d-inline-block align-top mt-1"></img>
-                    <b>TooFocused</b>
-                </a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse d-flex justify-content-between" id="navbarNavDropdown">
-                    <ul className="navbar-nav">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="">Home <span className="sr-only">(current)</span></a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="">Your Dashboard</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="">Classroom</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="">Group</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="">Explore</a>
-                        </li>
-                    </ul>
-                    <div class="dropdown">
-                        <Mui.Button variant="text" startIcon={<Mui.Avatar alt="User Img" src={student} />} className="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Riya Sen
-                        </Mui.Button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" >Profile</a>
-                            <a class="dropdown-item" >Preferences</a>
-                            <a class="dropdown-item" >Sign Out</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            
+            <HomeNavbar/>
             <div className="mx-4 my-1 p-4 border rounded">
                 <div className="d-flex">
                     <Mui.Avatar alt="User Img" src={student} />
@@ -86,6 +48,7 @@ export default function Home(){
                             <Mui.MenuItem value={2}>In Specific Group_Name</Mui.MenuItem>
                         </Mui.Select>
                     </Mui.FormControl>
+                    <Mui.Button variant="contained" size="small" disableElevation endIcon={<SendIcon/>} className="px-3">Send</Mui.Button>
                 </div>
             </div>
             

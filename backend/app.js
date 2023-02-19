@@ -29,7 +29,7 @@ const blogRoutes = require('./api/routes/blog');
 const tagRoutes = require('./api/routes/tags');
 
 mongoose.connect(
-    'mongodb+srv://HackathonFILgroup:'+process.env.MongoAtlasPW +'@toofocuseddb.hwuzyar.mongodb.net/?retryWrites=true&w=majority'
+    'mongodb+srv://HackathonFILgroup:3czWIjO9QXPI64tL@toofocuseddb.hwuzyar.mongodb.net/?retryWrites=true&w=majority'
 );
 
 // Mount routers
