@@ -20,16 +20,25 @@ app.use((req, res, next)=>{
     next();
 });
 
+//route files
 const userRoutes = require('./api/routes/user');
 const tasksRoutes = require('./api/routes/tasks');
-
+const questionRoutes = require('./api/routes/question');
+const answerRoutes = require('./api/routes/answer');
+const blogRoutes = require('./api/routes/blog');
+const tagRoutes = require('./api/routes/tags');
 
 mongoose.connect(
     'mongodb+srv://HackathonFILgroup:3czWIjO9QXPI64tL@toofocuseddb.hwuzyar.mongodb.net/?retryWrites=true&w=majority'
 );
 
+// Mount routers
 app.use('/users', userRoutes);
 app.use('/tasks',tasksRoutes);
+app.use('/questions',questionRoutes);
+app.use('/blogs',blogRoutes);
+app.use('/answers',answerRoutes);
+app.use('/tags', tagRoutes);
 
 //ERROR Handling
 app.use((req, res, next)=>{

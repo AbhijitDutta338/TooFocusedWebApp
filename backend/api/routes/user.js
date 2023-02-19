@@ -1,18 +1,22 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const User = require('../models/user');
+
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
     User.find().exec()
-        .then(docs => {
-            if (docs.length > 0) {
-                res.status(200).json(docs);
-            } else {
-                res.status(404).json({
-                    message: "No entry found"
-                });
-            }
+    .then(docs => {
+        if(docs.length > 0){
+            res.status(200).json({
+                count : docs.length,
+                users : docs
+            });
+        }else{
+            res.status(404).json({
+                message: "No entry found"                
+            });
+        }
         }).catch(err => {
             console.log(err);
             res.status(500).json({

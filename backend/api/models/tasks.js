@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const taskSchema = mongoose.Schema({
-    _id : mongoose.Schema.Types.ObjectId,
     user : {
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User',
@@ -13,6 +12,10 @@ const taskSchema = mongoose.Schema({
     priority: {
         type: Number,
         default: 1
+    },
+    timer : {
+        type : Number,
+        default : 1500
     }
 });
 
