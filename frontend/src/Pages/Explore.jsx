@@ -21,10 +21,12 @@ const Item = styled(Paper)(({ theme }) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   }));
-
+  // constant for side bar
   const Groups=[{groupName:"Programmer's cafe",groupAvatar:coding},{groupName:"History Buffs",groupAvatar:history},{groupName:"Indian Politics",groupAvatar:politics},{groupName:"General Knowledge",groupAvatar:gk}]
   const Tags = ['psychology','history','computer science','english','politics','psychology','history','computer science','english','politics','psychology','history','computer science','english','politics','psychology','history','computer science','english','politics'];
   const tagColors=[red[200],purple[300],amber[500],deepOrange[500],lime[400],teal[500],deepOrange[300],pink[300],lightGreen[600],purple[500]];
+
+  //constant for posts
   const postData = [
     { postTitle: "Lorem Ipsum", postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
      postAuthor:13, postDate: "23/03/23"},
@@ -114,7 +116,7 @@ export default function Explore(){
                                                         </Mui.Avatar>
                                                     </Mui.AvatarGroup>
 
-                                                    <Mui.IconButton sx={{ width: 17, height: 17 }} style={{ marginLeft: 'auto' }} onClick={handleMoreClick} component={Link} to="/groupsPage">
+                                                    <Mui.IconButton sx={{ width: 17, height: 17 }} style={{ marginLeft: 'auto' }}>
                                                         <Mui.ChevronRightIcon />
                                                     </Mui.IconButton>
                                                 </Mui.CardActions>
